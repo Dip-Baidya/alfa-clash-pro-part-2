@@ -8,6 +8,29 @@
 //     playGroundSection.classList.remove('hidden');
 // }
 
+
+function handleKeyboardUpevent(event) {
+    const playerPressed = event.key;
+
+    // get the expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expectedAplphabet = currentAlphabet.toLowerCase();
+
+    // Checked mattched or not
+
+    if (playerPressed === expectedAplphabet) {
+        console.log('You get a point');
+    }
+    else (
+        console.log('You lose a point')
+    )
+
+}
+
+document.addEventListener('keyup', handleKeyboardUpevent);
+
+
 function continueGame() {
     // step-1: Generate a random alphabet
     const alphabet = getRandomAlphabet();
