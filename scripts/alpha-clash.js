@@ -20,12 +20,39 @@ function handleKeyboardKeyUpEvent(event) {
     // Checked mattched or not
 
     if (playerPressed === expectedAplphabet) {
+
+        // Update Score:
+        // 1. Get the current score
+        const currentScoreElement = document.getElementById('current-score');
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText);
+
+        // 2. Increase the score by 1
+        const newScore = currentScore + 1;
+
+        // 3. Show the updated score
+        currentScoreElement.innerText = newScore;
         removeBackgroundColorById(expectedAplphabet);
         continueGame();
     }
-    else (
-        console.log('You lose a point')
-    )
+    else {
+
+        // step 1 get current life number
+
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLifeText = currentLifeElement.innerText;
+        const curerentLife = parseInt(currentLifeText);
+
+        // step 2 reduce the life count
+        const newLife = curerentLife - 1;
+
+        // Step 3 Display the life count
+        currentLifeElement.innerText = newLife; 
+
+    }
+
+
+
 
 }
 
