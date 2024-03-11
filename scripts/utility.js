@@ -13,6 +13,11 @@ function setBackgroundColorById(elementId) {
     element.classList.add('bg-orange-400');
 }
 
+function removeBackgroundColorById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-orange-400');
+}
+
 function getRandomAlphabet() {
     // get or create alphabet array
 
@@ -25,7 +30,7 @@ function getRandomAlphabet() {
     const index = Math.round(randomNumber);
 
     const alphabet = alphabets[index];
-    return alphabet
+    return alphabet;
 
 
 }

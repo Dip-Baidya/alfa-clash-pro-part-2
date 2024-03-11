@@ -9,7 +9,7 @@
 // }
 
 
-function handleKeyboardUpevent(event) {
+function handleKeyboardKeyUpEvent(event) {
     const playerPressed = event.key;
 
     // get the expected to press
@@ -20,7 +20,8 @@ function handleKeyboardUpevent(event) {
     // Checked mattched or not
 
     if (playerPressed === expectedAplphabet) {
-        console.log('You get a point');
+        removeBackgroundColorById(expectedAplphabet);
+        continueGame();
     }
     else (
         console.log('You lose a point')
@@ -28,7 +29,7 @@ function handleKeyboardUpevent(event) {
 
 }
 
-document.addEventListener('keyup', handleKeyboardUpevent);
+document.addEventListener('keyup', handleKeyboardKeyUpEvent);
 
 
 function continueGame() {
