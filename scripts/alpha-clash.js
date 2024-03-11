@@ -47,7 +47,11 @@ function handleKeyboardKeyUpEvent(event) {
         const newLife = curerentLife - 1;
 
         // Step 3 Display the life count
-        currentLifeElement.innerText = newLife; 
+        currentLifeElement.innerText = newLife;
+
+        if (newLife === 0) {
+            gameOver();
+        }
 
     }
 
@@ -70,8 +74,21 @@ function continueGame() {
     // set backGround color
     setBackgroundColorById(alphabet);
 }
+
+
 function play() {
+    // Hide Everything show only the playground
     hideElementById('home-screen');
+    hideElementById('final-score')
     showElementById('play-ground');
+
+    // reset score and life
+    setTextElementValueById('current-life', 5);
+    setTextElementValueById('current-score', 0);
     continueGame()
+}
+function gameOver() {
+
+    hideElementById('play-ground');
+    showElementById('final-score')
 }
